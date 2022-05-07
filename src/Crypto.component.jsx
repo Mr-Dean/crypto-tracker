@@ -45,10 +45,10 @@ const Crypto = () => {
         <h1>CRYPTO TRACKER</h1>
         <img className="logo" src={ethLogo} alt="logo"/>
         <h2>ethereum</h2>
-        <h3>{ethereum ? `£${Number(Math.floor(ethereum)).toLocaleString()}` : 'Loading...'}</h3>
+        <h3>{ethereum ? `£${Number(ethereum).toLocaleString()}` : 'Loading...'}</h3>
         <img className="logo" src={bitLogo} alt="logo"/>
         <h2>bitcoin</h2>
-        <h3>{bitcoin ? `£${Number(Math.floor(bitcoin)).toLocaleString()}` : 'Loading...'}</h3>
+        <h3>{bitcoin ? `£${Number(bitcoin).toLocaleString()}` : 'Loading...'}</h3>
         
         
         
