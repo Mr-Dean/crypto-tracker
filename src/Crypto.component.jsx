@@ -7,7 +7,6 @@ const Crypto = () => {
   const [hasError, setErrors] = useState(false);
   const [ethereum, setEth] = useState();
   const [bitcoin, setBitcoin] = useState();
-  
 
   const fetchData = async () => {
     const eth = await fetch("https://api.coinbase.com/v2/exchange-rates?currency=ETH");
@@ -15,6 +14,7 @@ const Crypto = () => {
       .json()
       .then(data => setEth(data.data.rates.GBP))
       .catch(err => setErrors(err));
+
   
     const bit = await fetch("https://api.coinbase.com/v2/exchange-rates?currency=BTC");
     bit
@@ -22,6 +22,7 @@ const Crypto = () => {
       .then(data => setBitcoin(data.data.rates.GBP))
       .catch(err => setErrors(err));
     };
+
 
     useEffect(() => {
       const interval = setInterval(() => {
@@ -41,14 +42,17 @@ const Crypto = () => {
     )
   } else {
     return(
-      <div>
-        <h1>CRYPTO TRACKER</h1>
-        <img className="logo" src={ethLogo} alt="logo"/>
-        <h2>ethereum</h2>
-        <h3>{ethereum ? `£${Number(ethereum).toLocaleString()}` : 'Loading...'}</h3>
-        <img className="logo" src={bitLogo} alt="logo"/>
-        <h2>bitcoin</h2>
-        <h3>{bitcoin ? `£${Number(bitcoin).toLocaleString()}` : 'Loading...'}</h3>
+      <div className='container'>
+        <div className='box'>
+          <img className="logo" src={ethLogo} alt="logo"/>
+          <h2>ethereum</h2>
+          <h3>{ethereum ? `£${Number(ethereum).toLocaleString()}` : 'Loading...'}</h3>
+        </div>
+        <div className='box'>
+          <img className="logo" src={bitLogo} alt="logo"/>
+          <h2>bitcoin</h2>
+          <h3>{bitcoin ? `£${Number(bitcoin).toLocaleString()}` : 'Loading...'}</h3>
+        </div>
         
         
         

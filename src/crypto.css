@@ -1,5 +1,21 @@
 .logo {
-    width: 100px;
-    height: auto;
-    border: 1px solid black;
+    width: auto;
+    height: 150px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    
+
 }
